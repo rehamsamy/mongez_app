@@ -17,7 +17,7 @@ AdsItemWidget(this.model);
          ),
         child: Card(
           elevation: 5,
-          color: Colors.orange,
+          color: Colors.white,
        child:   Stack(
             children: [
             FadeInImage(

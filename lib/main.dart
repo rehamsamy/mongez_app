@@ -17,7 +17,6 @@ ProductController productController=Get.put(ProductController());
     Cons.buildColors(context);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-
       title: 'Flutter Demo',
       theme: ThemeData(
         primaryColor: Color.fromARGB(255, 213, 177, 57),

@@ -10,7 +10,7 @@ class StoreWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 5,
+      elevation: 8,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -29,7 +29,7 @@ class StoreWidget extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(15.0),
 
-                    child:  Image.asset('assets/images/store1.png',
+                    child:  Image.asset('assets/images/store4.png',
                       fit: BoxFit.cover,
                       height: 70,
                       width: 70,)

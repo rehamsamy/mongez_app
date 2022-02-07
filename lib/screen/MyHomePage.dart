@@ -126,26 +126,7 @@ class _MainPageScreenState extends State<MainPageScreen>  with SingleTickerProvi
                     ),
                     Expanded(
                       flex: 1,
-                      child: Container(
-                        color: Colors.grey.shade50,
-                        height: cons.maxHeight * 0.24,
-                        padding: EdgeInsets.all(10),
-                        child: Center(
-                          child: TextFormField(
-                            decoration: InputDecoration(
-                              // border: OutlineInputBorder(
-                              //   borderRadius: BorderRadius.circular(15.0),
-                              // ),
-                              hintText: 'بحث',
-                              prefixIcon: Icon(Icons.search),
-                              suffixIcon: CircleAvatar(
-                                radius: 40,
-                                backgroundImage: AssetImage(
-                                    'assets/images/store1.png'),
-                              ),),
-                          ),
-                        ),
-                      ),
+                      child: buildSearchAppbarContainer()
                     ),
                     Expanded(
                       flex: 1,
@@ -344,6 +325,34 @@ class _MainPageScreenState extends State<MainPageScreen>  with SingleTickerProvi
               ),
               hintText: '  ابحث عن متاجر ',
               suffixIcon:Icon( Icons.search)),
+        ),
+      ),
+    );
+  }
+
+  buildSearchAppbarContainer() {
+    return    Container(
+      color: Colors.grey.shade50,
+      height: 60,
+      padding: EdgeInsets.all(10),
+      child: Center(
+        child: TextFormField(
+          decoration: InputDecoration(
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15.0),
+              ),
+              hintText: '  ابحث عن متاجر ',
+              prefixIcon:Icon( Icons.search),
+      suffixIcon: Padding(
+        padding: const EdgeInsets.all(5.0),
+        child: ClipOval(
+          child: SizedBox.fromSize(
+            size: Size.fromRadius(6), // Image radius
+            child: Image.asset('assets/images/store1.png', fit: BoxFit.cover,),
+          ),
+        ),
+      )
+           ,),
         ),
       ),
     );
