@@ -26,7 +26,8 @@ ProductController productController=Get.put(ProductController());
         canvasColor: Colors.white,
         primarySwatch: Colors.blue,
       ),
-      home:  MainPageScreen(),
+      home:  Directionality(
+          textDirection:TextDirection.rtl,child: MainPageScreen()),
     );
   }
 }
