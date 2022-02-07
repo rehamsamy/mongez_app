@@ -21,7 +21,7 @@ ProductController productController=Get.put(ProductController());
       title: 'Flutter Demo',
       theme: ThemeData(
         primaryColor: Color.fromARGB(255, 213, 177, 57),
-        unselectedWidgetColor: Color.fromARGB(255, 123, 196, 229),
+      //  accen: Color.fromARGB(255, 123, 196, 229),
         // rgba(228,190,55,255)
         accentColor: Color.fromARGB(255, 123, 196, 229),
         canvasColor: Colors.white,

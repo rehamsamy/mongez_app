@@ -45,27 +45,26 @@ class _MainPageScreenState extends State<MainPageScreen>  with SingleTickerProvi
             body: CustomScrollView(
                 slivers: [
                   buildAppBar(context),
-
-                  // buildAppBar(context),
-                  SliverList(delegate: SliverChildListDelegate(
-                      [
-                 SizedBox(height: 20,),
-                      ]
-
-                  ),
-                  ),
-
                   SliverFillRemaining(
-                    child: Scaffold(
-                        body: TabBarView(
-                          children: [
-                            buildAdsGrid(),
-                            buildCatGrid(),
-                            buildStoreList(),
-                            Text('1'),
-                          ],
-                        )
-                    ),
+                    child: TabBarView(
+                               children: [
+                              buildAdsGrid(),
+                              buildCatGrid(),
+                              buildStoreList(),
+                              Text('1'),
+                    ]
+                    )
+
+                    // Scaffold(
+                    //     body: TabBarView(
+                    //       children: [
+                    //         buildAdsGrid(),
+                    //         buildCatGrid(),
+                    //         buildStoreList(),
+                    //         Text('1'),
+                    //       ],
+                    //     )
+                    // ),
                   )
 
                 ]),
@@ -223,10 +222,10 @@ class _MainPageScreenState extends State<MainPageScreen>  with SingleTickerProvi
 
 
   buildAdsGrid() {
-    return SingleChildScrollView(
-      child: Container(
-        margin: EdgeInsets.all(5),
-        color: Colors.white,
+    return Container(
+      margin: EdgeInsets.all(5),
+      color: Colors.white,
+      child: Expanded(
         child: Column(
           children: [
             SizedBox(height: 10,),
@@ -254,20 +253,22 @@ class _MainPageScreenState extends State<MainPageScreen>  with SingleTickerProvi
               ],
             ),
             SizedBox(height: 15,),
-
-            GridView.builder(
-                shrinkWrap: true,
-                //  scrollDirection: Axis.vertical,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    mainAxisSpacing: 0,
-                    crossAxisSpacing: 0,
-                    childAspectRatio: 8 / 9,
-                    crossAxisCount: 3),
-                itemCount: Cons.adsList.length,
-                itemBuilder: (ctx, inx) {
-                  return AdsItemWidget(
-                      Cons.adsList[inx]);
-                }),
+            
+            Expanded(
+              child: GridView.builder(
+                  shrinkWrap: true,
+                  //  scrollDirection: Axis.vertical,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      mainAxisSpacing: 0,
+                      crossAxisSpacing: 0,
+                      childAspectRatio: 8 / 9,
+                      crossAxisCount: 3),
+                  itemCount: Cons.adsList.length,
+                  itemBuilder: (ctx, inx) {
+                    return AdsItemWidget(
+                        Cons.adsList[inx]);
+                  }),
+            ),
           ],
         ),
       ),
@@ -275,28 +276,26 @@ class _MainPageScreenState extends State<MainPageScreen>  with SingleTickerProvi
   }
 
   buildCatGrid() {
-    return SingleChildScrollView(
-      child: GridView.builder(
-          shrinkWrap: true,
-          //  scrollDirection: Axis.vertical,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              mainAxisSpacing: 0,
-              crossAxisSpacing: 0,
-              childAspectRatio: 8 / 9,
-              crossAxisCount: 2),
-          itemCount: Cons.categoriesList.length,
-          itemBuilder: (ctx, inx) {
-            return CategoryItem(
-                Cons.categoriesList[inx]);
-          }),
-    );
+    return GridView.builder(
+        shrinkWrap: true,
+        //  scrollDirection: Axis.vertical,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            mainAxisSpacing: 0,
+            crossAxisSpacing: 0,
+            childAspectRatio: 8 / 9,
+            crossAxisCount: 2),
+        itemCount: Cons.categoriesList.length,
+        itemBuilder: (ctx, inx) {
+          return CategoryItem(
+              Cons.categoriesList[inx]);
+        });
   }
 
   buildStoreList() {
-    return SingleChildScrollView(
-      child: Container(
-       // margin: EdgeInsets.all(5),
-        color: Colors.white,
+    return Container(
+     // margin: EdgeInsets.all(5),
+      color: Colors.white,
+      child: Expanded(
         child: Column(
           children: [
             SizedBox(height: 10,),
@@ -316,14 +315,16 @@ class _MainPageScreenState extends State<MainPageScreen>  with SingleTickerProvi
 
             SizedBox(height: 15,),
 
-            ListView.builder(
-                shrinkWrap: true,
-                //  scrollDirection: Axis.vertical,
-                itemCount: Cons.storesList.length,
-                itemBuilder: (ctx, inx) {
-                  return StoreWidget(
-                      Cons.storesList[inx]);
-                }),
+            Expanded(
+              child: ListView.builder(
+                  shrinkWrap: true,
+                  //  scrollDirection: Axis.vertical,
+                  itemCount: Cons.storesList.length,
+                  itemBuilder: (ctx, inx) {
+                    return StoreWidget(
+                        Cons.storesList[inx]);
+                  }),
+            ),
           ],
         ),
       ),

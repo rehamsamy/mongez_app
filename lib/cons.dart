@@ -3,13 +3,7 @@ import 'package:mongez_app/model/ads_model.dart';
 
 import 'model/category_model.dart';
 import 'model/store_model.dart';
-// import 'package:zagel_app/models/category_model.dart';
-// import 'package:zagel_app/models/company_model.dart';
-// import 'package:zagel_app/models/service_model.dart';
-// import 'package:zagel_app/widget/CategoryItem.dart';
-//
-// import 'models/ads_model.dart';
-//
+
  class Cons {
   static List<CategoryModel> categoriesList = [
     new CategoryModel(
@@ -83,7 +77,7 @@ import 'model/store_model.dart';
         .of(ctx)
         .accentColor;
   }
-//stic Widget getAppbar(String title);
+
 
 
 }
